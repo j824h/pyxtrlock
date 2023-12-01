@@ -46,3 +46,9 @@ def require_x11_session():
         )
     finally:
         wayland_socket.close()
+
+def lock():
+    import pyxtrlock.scripts.lock
+
+def make_lock():
+    import pyxtrlock.scripts.make_lock

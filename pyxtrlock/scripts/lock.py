@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# emacs this is -*-python-*-
-
 import os
 import sys
 import time

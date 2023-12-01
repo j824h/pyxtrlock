@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyxtrlock"
+version = "0.4"
+authors = [
+    {name = "Leon Weber", email = "leon@leonweber.de"},
+    {name = "Sebastian Riese", email = "s.riese@zombofant.net"}
+]
+description = "The X transparent screen lock rewritten in Python, using XCB and PAM."
+readme = "README.md"
+license = {text = "GPLv3+"}
+classifiers = [
+    "Development Status :: 3",
+    "Environment :: X11 Applications",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Desktop Environment :: Screen Savers"
+]
+requires-python = ">=3.0"
+dependencies = [
+    "simplepam",
+    "pyxdg"
+]
+
+[project.urls]
+homepage = "https://github.com/leonnnn/pyxtrlock"
+
+[project.scripts]
+pyxtrlock = "pyxtrlock:lock"
+pyxtrlock-make-lock = "pyxtrlock:make_lock"
+
+[project.optional-dependencies]
+make-lock = ["Pillow"]
+
+[tool.setuptools]
+packages = ["pyxtrlock", "pyxtrlock.scripts"]

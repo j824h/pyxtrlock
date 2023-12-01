@@ -36,9 +36,17 @@ setup(name='pyxtrlock',
       version='0.4',
       author=authors,
       author_email='leon@leonweber.de',
-      install_requires=['simplepam', 'pyxdg'],
-      packages=['pyxtrlock'],
-      scripts=['bin/pyxtrlock'],
+      install_requires=['simplepam', 'pyxdg', 'pillow'],
+      packages=['pyxtrlock', 'pyxtrlock.scripts'],
+      entry_points={
+          'console_scripts': [
+              'pyxtrlock = pyxtrlock:lock',
+              'pyxtrlock-make-lock = pyxtrlock:make_lock'
+          ]
+      },
+      extras_require={
+          'make-lock': ['Pillow']
+      },
       license='GPLv3+',
       url='https://github.com/leonnnn/pyxtrlock',
       description=desc,
